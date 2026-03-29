@@ -1,5 +1,6 @@
 import express from 'express';
-import { Rest } from 'classeviva.js';
+import pkg from 'classeviva.js';
+const { Rest } = pkg;
 import ical from 'ical-generator';
 import dotenv from 'dotenv';
 
