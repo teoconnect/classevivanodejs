@@ -82,7 +82,11 @@ app.get('/agenda.ics', async (req, res) => {
     }
 
     // Serve the calendar file
-    calendar.serve(res);
+    res.set({
+      'Content-Type': 'text/calendar; charset=utf-8',
+      'Content-Disposition': 'attachment; filename="agenda.ics"'
+    });
+    res.send(calendar.toString());
 
   } catch (error) {
     console.error('Error fetching data from Classeviva:', error);
